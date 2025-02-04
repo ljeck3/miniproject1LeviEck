@@ -4,12 +4,23 @@
 import pprint
 import yfinance as yf
 
-msft = yf.Ticker("MSFT")
 
-# get all stock info
-#pprint.pprint(msft.info)
+mydata ={}
+
+myTickers = ["MSFT", "AAPL", "NVDA", "GME", "AMC"]
+myTickers.sort()
+for ticker in myTickers:
+    result = yf.Ticker(ticker)
+    mydata[ticker] = {'ticker': ticker,
+                      'dayHigh': result.info['dayHigh']
+                        }
+    print(f"Ticker: {ticker} \tDaily High: {result.info['dayHigh']}")
+
+pprint.pprint(mydata)
+
+
 
 #get historical market data
-hist = msft.history(period='1mo')
+#hist = msft.history(period='1mo')
 
-pprint.pprint(hist)
+#pprint.pprint(hist)

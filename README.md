@@ -7,7 +7,7 @@
 
 ## Description
 
-This project will be using the packages NumPy and Matplotlib in order to create 5 graphs that output as PNG files.
+This project will be using the NumPy and Matplotlib packages, in order to create 5 graphs that output as PNG files.
 
 ## Getting Started
 

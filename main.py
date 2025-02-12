@@ -3,20 +3,32 @@
 ### Mini Project 1
 import pprint
 import yfinance as yf
+from datetime import datetime, timedelta
+import numpy as np
+import matplotlib.pyplot as plt
 
 
-mydata ={}
+today = datetime.now()
+ten_days_ago = today - timedelta(days=15)
 
-myTickers = ["MSFT", "AAPL", "NVDA", "GME", "AMC"]
+
+myTickers = ["MSFT", "NTDOY", "NVDA", "GME", "AMC"]
+
 myTickers.sort()
 for ticker in myTickers:
     result = yf.Ticker(ticker)
-    mydata[ticker] = {'ticker': ticker,
-                      'dayHigh': result.info['dayHigh']
-                        }
-    print(f"Ticker: {ticker} \tDaily High: {result.info['dayHigh']}")
+    hist = result.history(start=ten_days_ago, end=today)
+    last10days = []
+    for date in hist['Close'][:11]:
+        last10days.append(date)
+        myarray = np.array(last10days)
+        plt.plot(myarray)
+        plt.xlabel('Data Points')
+        plt.ylabel('Closing Price')
+        plt.title(f"{ticker} Last 10 Closing Prices")
+        plt.show()
 
-pprint.pprint(mydata)
+
 
 
 

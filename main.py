@@ -6,7 +6,7 @@ import yfinance as yf
 from datetime import datetime, timedelta
 import numpy as np
 import matplotlib.pyplot as plt
-
+import copy
 
 today = datetime.now()
 ten_days_ago = today - timedelta(days=15)
@@ -21,10 +21,19 @@ for ticker in myTickers:
     last10days = []
     for date in hist['Close'][:11]:
         last10days.append(date)
+        # maxlist = copy.copy(last10days)
+        # maxlist.sort()
+        # max_price = maxlist[-1]+10
+        # min_price = maxlist[0]-10
+
+
         myarray = np.array(last10days)
+        max_price = myarray.max() + (myarray.max()*.05)
+        min_price = myarray.min() - (myarray.max()*.05)
         plt.plot(myarray)
-        plt.xlabel('Data Points')
+        plt.xlabel('Days Ago')
         plt.ylabel('Closing Price')
+        plt.axis((9, 0, min_price, max_price))
         plt.title(f"{ticker} Last 10 Closing Prices")
         plt.show()
 

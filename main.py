@@ -1,12 +1,10 @@
 ### INF601 - Advanced Programming in Python
 ### Levi Eck
 ### Mini Project 1
-import pprint
 import yfinance as yf
 from datetime import datetime, timedelta
 import numpy as np
 import matplotlib.pyplot as plt
-import copy
 import os
 
 os.makedirs("charts", exist_ok=True)
@@ -24,10 +22,6 @@ for ticker in myTickers:
     last10days = []
     for date in hist['Close'][:11]:
         last10days.append(date)
-        # maxlist = copy.copy(last10days)
-        # maxlist.sort()
-        # max_price = maxlist[-1]+10
-        # min_price = maxlist[0]-10
 
 
         myarray = np.array(last10days)

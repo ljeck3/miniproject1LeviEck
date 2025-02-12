@@ -22,7 +22,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-###
+### Output
 
 This should create 5 graphs in charts/ for each of the five stocks
 
@@ -33,8 +33,6 @@ Levi Eck
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)# miniproject1LeviEck
+* [yfinance](https://pypi.org/project/yfinance/)
+* [matplotlib](https://matplotlib.org/)
+* [ChatGPT](https://chatgpt.com/share/67acef92-ebd0-8001-a165-3a89e534e975)

@@ -28,11 +28,3 @@ for ticker in myTickers:
         plt.title(f"{ticker} Last 10 Closing Prices")
         plt.show()
 
-
-
-
-
-#get historical market data
-#hist = msft.history(period='1mo')
-
-#pprint.pprint(hist)
